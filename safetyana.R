@@ -26,165 +26,163 @@ ui <- dashboardPage(
   dashboardBody(
     tabItems(
       tabItem(tabName = "AES",
-      fluidRow(
-      tabBox(width = 5,
-        tabPanel("Dataset",
-          fluidRow(
-            column(12,
-                   fileInput("file1", label = "Upload the Adverse Event Analysis Dataset"),
-                   uiOutput("Sflag"),
-                   uiOutput("Tflag"),
-                   uiOutput("sbjid")
-            ),
-            column(12,
-                  radioButtons('pop', label = "Acquire the population of subgroups",
-                                  choices = list("Typing in" = 1, 
-                                                 "Upload the Subject-Level Analysis Dataset" = 2)),
-                  uiOutput("num"),
-                  uiOutput("var"),
-                  uiOutput("val"),
-                  uiOutput("valnum"),
-                  uiOutput("slvar"),
-                  uiOutput("slval"),
-                  uiOutput("slvaln"),
-                  uiOutput("add"),
-                  uiOutput("demo"),
-                  uiOutput("demoval"),
-                  uiOutput("demovaln"),
-                  uiOutput("checkfl"),
-                  uiOutput("fvar"),
-                  uiOutput("fval"),
-                  uiOutput("checkfl1"),
-                  uiOutput("fvar1"),
-                  uiOutput("fval1")
-          
-                    
-            ),
-          )
-      ),
-      tabPanel("SOC&PT",
-               fluidRow(
-                 column(6,
-                        checkboxInput("bysoc","Analyze SOC",value = T)),
-                 
-                 column(6,
-                        checkboxInput("bypt","Analyze PT",value = T)),
-                 column(6,
-                        selectInput("soc","Please select the term of SOC", 
-                                    choices = "")
-                 ),
-                 column(6,
-                        selectInput("pt","Please select the term of PT", 
-                                    choices = "")
-                 ),
-                 column(6,
-                        checkboxInput("trans","Need translation for SOC and PT"),
-                        uiOutput("transvar")
-                 ))),
-      tabPanel("Criteria",
-          fluidRow(
-            column(6,
-                   p(h4("Phase"),
-                     checkboxInput("checkp", label = "Check for phase analysis", value = FALSE),
-                     uiOutput("pvar"),
-                     uiOutput("pval")
-                   )
-            ),
-            column(6,
-                   p(h4("Relationship"),
-                     checkboxInput("checkr", label = "Check for adverse events related to regimen", value = FALSE),
-                     uiOutput("relt"),
-                     uiOutput("relg")
-                   )
-            ),
-            column(6,
-                   p(h4("Serious Event"),
-                     checkboxInput("checksr", label = "Check for serious adverse events", value = FALSE),
-                     uiOutput("set")
-                   )
-            ),
-            column(6,
-                   p(h4("Immune Related Event"),
-                     checkboxInput("checkirae", label = "Check for investigator determined immune related adverse events", value = FALSE),
-                     uiOutput("irAE")
-                   )
-            ),
-            column(6,
-                   p(h4("Infusion Related Event"),
-                     checkboxInput("checkinfu", label = "Check for information about infusion", value = FALSE),
-                     uiOutput("infusion")
-                   )
-            ),
-            column(6,
-                   p(h4("Severity"),
-                     checkboxInput("checks", label = "Check for specific grades of adverse events", value = FALSE),
-                     uiOutput("sele"),
-                     uiOutput("selg"),
-                     uiOutput("allg"),
-                     uiOutput("gt3"),
-                     uiOutput("lw3")
-                   )
-            ),
-            column(6,
-                   p(h4("Other criteria"),
-                     checkboxInput("checko", label = "Check for other criteria", value = FALSE),
-                     uiOutput("ovar"),
-                     uiOutput("oval")
-                   )
-            ),
-            
-          )
+              fluidRow(
+                tabBox(width = 5,
+                       tabPanel("Dataset",
+                                fluidRow(
+                                  column(12,
+                                         fileInput("file1", label = "Upload the Adverse Event Analysis Dataset"),
+                                         uiOutput("Sflag"),
+                                         uiOutput("Tflag"),
+                                         uiOutput("sbjid")
+                                  ),
+                                  column(12,
+                                         radioButtons('pop', label = "Acquire the population of subgroups",
+                                                      choices = list("Typing in" = 1, 
+                                                                     "Upload the Subject-Level Analysis Dataset" = 2)),
+                                         uiOutput("num"),
+                                         uiOutput("var"),
+                                         uiOutput("val"),
+                                         uiOutput("valnum"),
+                                         uiOutput("slvar"),
+                                         uiOutput("slval"),
+                                         uiOutput("slvaln"),
+                                         uiOutput("add"),
+                                         uiOutput("demo"),
+                                         uiOutput("demoval"),
+                                         uiOutput("demovaln"),
+                                         uiOutput("checkfl"),
+                                         uiOutput("fvar"),
+                                         uiOutput("fval"),
+                                         uiOutput("checkfl1"),
+                                         uiOutput("fvar1"),
+                                         uiOutput("fval1")
+                                         
+                                         
+                                  ),
+                                )
+                       ),
+                       tabPanel("SOC&PT",
+                                fluidRow(
+                                  column(6,
+                                         checkboxInput("bysoc","Analyze SOC",value = T)),
+                                  
+                                  column(6,
+                                         checkboxInput("bypt","Analyze PT",value = T)),
+                                  column(6,
+                                         selectInput("soc","Please select the term of SOC", 
+                                                     choices = "")
+                                  ),
+                                  column(6,
+                                         selectInput("pt","Please select the term of PT", 
+                                                     choices = "")
+                                  )
+                                )),
+                       tabPanel("Criteria",
+                                fluidRow(
+                                  column(6,
+                                         p(h4("Phase"),
+                                           checkboxInput("checkp", label = "Check for phase analysis", value = FALSE),
+                                           uiOutput("pvar"),
+                                           uiOutput("pval")
+                                         )
+                                  ),
+                                  column(6,
+                                         p(h4("Relationship"),
+                                           checkboxInput("checkr", label = "Check for adverse events related to regimen", value = FALSE),
+                                           uiOutput("relt"),
+                                           uiOutput("relg")
+                                         )
+                                  ),
+                                  column(6,
+                                         p(h4("Serious Event"),
+                                           checkboxInput("checksr", label = "Check for serious adverse events", value = FALSE),
+                                           uiOutput("set")
+                                         )
+                                  ),
+                                  column(6,
+                                         p(h4("Immune Related Event"),
+                                           checkboxInput("checkirae", label = "Check for investigator determined immune related adverse events", value = FALSE),
+                                           uiOutput("irAE")
+                                         )
+                                  ),
+                                  column(6,
+                                         p(h4("Infusion Related Event"),
+                                           checkboxInput("checkinfu", label = "Check for information about infusion", value = FALSE),
+                                           uiOutput("infusion")
+                                         )
+                                  ),
+                                  column(6,
+                                         p(h4("Severity"),
+                                           checkboxInput("checks", label = "Check for specific grades of adverse events", value = FALSE),
+                                           uiOutput("sele"),
+                                           uiOutput("selg"),
+                                           uiOutput("allg"),
+                                           uiOutput("gt3"),
+                                           uiOutput("lw3")
+                                         )
+                                  ),
+                                  column(6,
+                                         p(h4("Other criteria"),
+                                           checkboxInput("checko", label = "Check for other criteria", value = FALSE),
+                                           uiOutput("ovar"),
+                                           uiOutput("oval")
+                                         )
+                                  ),
+                                  
+                                )
+                       )
+                ),
+                tabBox(width = 7,
+                       tabPanel(title = "AE Dataset Preview",
+                                fluidRow(
+                                  column(12,
+                                         DTOutput("dataprez"))
+                                )),
+                       tabPanel(title = "Subject-level Dataset Preview",
+                                fluidRow(
+                                  column(12,
+                                         DTOutput("datapresl"))
+                                )),
+                       tabPanel(title = "Output",
+                                fluidRow(
+                                  #  column(6,
+                                  #         p(HTML("<b>Select the information you would like to see in the table<b>"),
+                                  #           checkboxInput("checksoc", label = "SOC", value = FALSE),
+                                  #           checkboxInput("checkpt", label = "PT", value = FALSE),
+                                  #         )
+                                  #  ),
+                                  column(6,
+                                         p(h4("Generate the result table"),
+                                           actionButton("action",label = "Get the result"),
+                                           downloadButton("rt", "Download the result")
+                                         ),
+                                         checkboxInput("colo", label = tags$b("Rearrange the column order"), value = F),
+                                         uiOutput("level"),
+                                         checkboxInput("checkpct", label = tags$b("Specific percentage required"), value = FALSE),
+                                         uiOutput("pct")
+                                  ),
+                                  column(6,
+                                         selectInput("col","Sort by",choices = NULL),
+                                         checkboxInput("checkasc", label = "Ascending", value = F),
+                                         checkboxInput("trans",tags$b("Need translation for SOC and PT")),
+                                         uiOutput("transvar")                  
+                                  ),
+                                  column(12,
+                                         tableOutput("pop"),
+                                         DT::dataTableOutput("test"))
+                                )
+                                
+                       )
+                )
+              )
+              
+              
+              
       )
-      ),
-      tabBox(width = 7,
-        tabPanel(title = "AE Dataset Preview",
-                 fluidRow(
-                   column(12,
-                          DTOutput("dataprez"))
-                 )),
-        tabPanel(title = "Subject-level Dataset Preview",
-                 fluidRow(
-                   column(12,
-                          DTOutput("datapresl"))
-                 )),
-        tabPanel(title = "Output",
-          fluidRow(
-            #  column(6,
-            #         p(HTML("<b>Select the information you would like to see in the table<b>"),
-            #           checkboxInput("checksoc", label = "SOC", value = FALSE),
-            #           checkboxInput("checkpt", label = "PT", value = FALSE),
-            #         )
-            #  ),
-            column(12,
-                   p(h4("Generate the result table"),
-                     actionButton("action",label = "Get the result"),
-                     downloadButton("rt", "Download the result")
-                   )
-            ),
-            column(6,
-                  selectInput("col","Sort by",choices = NULL),
-                  checkboxInput("checkasc", label = "Ascending", value = F),
-                  checkboxInput("checkpct", label = "Specific percentage required", value = FALSE),
-                  uiOutput("pct")
-            ),
-            column(6,
-                   checkboxInput("colo", label = "Rearrange the column order", value = F),
-                   uiOutput("level")),
-            column(12,
-                   tableOutput("pop"),
-                   DT::dataTableOutput("test"))
-          )
-          
-      )
-      )
-      )
-      
       
       
     )
-    
-    
-  )
   )
 )
 
@@ -234,7 +232,7 @@ server <- function(input, output) {
       ) %>%
       mutate(var_label = var_label)
   }
-
+  
   
   label <- reactive({
     data1 <- input$file1
@@ -260,14 +258,14 @@ server <- function(input, output) {
     }
     else{NULL}
   })
-
+  
   observeEvent(input$file1,{
     data1 <- input$file1
     adae <- read_sas(data1$datapath)
     idx1 = grep("Organ Class|器官",label())
     soccol = colnames(adae)[idx1]
     soclab = label()[idx1]
-
+    
     idx2 = grep("Dictionary-Derived Term|首选术语",label())
     ptcol = colnames(adae)[idx2]
     ptlab = label()[idx2]
@@ -281,8 +279,8 @@ server <- function(input, output) {
     }else{
       updateSelectInput(session  = getDefaultReactiveDomain(),"pt",choices = setNames(names(adae),label()))
     }
-    })
-
+  })
+  
   #Generate input file
   adae<-reactive({
     data1 <- input$file1
@@ -321,16 +319,16 @@ server <- function(input, output) {
     
     adae["grade"] = "All Grade"
     if(input$soc != "" && input$pt != ""){
-
-    #  adae$SOC=adae[[input$soc]]
- #   adae[is.na(adae$SOC),]$SOC <- "Not Coded"
-    #  adae$PT =adae[[input$pt]]
-   # adae[is.na(adae$SOC),]$PT <- adae[is.na(adae$SOC),]$AETERM
-    
+      
+      #  adae$SOC=adae[[input$soc]]
+      #   adae[is.na(adae$SOC),]$SOC <- "Not Coded"
+      #  adae$PT =adae[[input$pt]]
+      # adae[is.na(adae$SOC),]$PT <- adae[is.na(adae$SOC),]$AETERM
+      
       adae$SOC <- ifelse(adae[[input$soc]] == "","Not Coded",adae[[input$soc]])
       adae$PT <- ifelse(adae[[input$pt]] == "",paste(adae$AETERM," (Report Term)"),adae[[input$pt]])
     }
-
+    
     
     
     soc_ref <- read.csv("SOC_All.csv")
@@ -367,12 +365,12 @@ server <- function(input, output) {
     }
     miss_obs
   })
-
+  
   output$miss <- renderText({
     if(is.null(miss_v())){
       return(NULL)
     }
-      
+    
     paste0("There are ", nrow(miss_v()), " obeservations do not have matching terms")
   })
   
@@ -383,7 +381,7 @@ server <- function(input, output) {
     #TR = pull(TR,TRTA)
   })  
   
-##-------SAFFL AND TRTEMFL----------------
+  ##-------SAFFL AND TRTEMFL----------------
   
   output$Sflag <- renderUI({
     req(input$file1)
@@ -406,9 +404,9 @@ server <- function(input, output) {
     else
       return(NULL)
   })
-##-------USUBJID----------------------------------- 
- 
-   output$sbjid <- renderUI({
+  ##-------USUBJID----------------------------------- 
+  
+  output$sbjid <- renderUI({
     req(input$file1)
     data1 <- input$file1
     adae <- read_sas(data1$datapath)
@@ -417,9 +415,9 @@ server <- function(input, output) {
     else{
       selectInput("sjid","Select the variable of unique subject id",choices = setNames(names(adae),label()))
     }
-   })
+  })
   
-##-------population count via type in----------------------  
+  ##-------population count via type in----------------------  
   
   output$var <- renderUI({
     if(is.null(input$file1) || input$pop !=1)     
@@ -436,7 +434,7 @@ server <- function(input, output) {
     else{
       checkboxGroupInput("val",label = NULL, choices = setNames(numTR(),numTR()))
     }
-
+    
   })
   
   output$valnum <- renderUI({
@@ -447,18 +445,18 @@ server <- function(input, output) {
   })
   
   
-##-------population count via adsl----------------------    
+  ##-------population count via adsl----------------------    
   output$num <- renderUI({
     if(input$pop == 2){
       
       #map(numTR(),~numericInput(.x,label = paste0("Please type in the population of ",.x),NULL))
       inputList <- list(
         fileInput("file0", label = h5("Please upload the Subject-Level Analysis Dataset"))
-
+        
       )
       do.call(tagList,inputList)
     }
-
+    
   })
   
   adsl<-reactive({
@@ -466,7 +464,7 @@ server <- function(input, output) {
       return(NULL)
     data0 <- input$file0
     adsl <- read_sas(data0$datapath)
-
+    
     adsl
   })  
   
@@ -512,7 +510,7 @@ server <- function(input, output) {
     map(val,~textInput(paste("n_",.),label = paste0("Label of ",.),.))
   })
   
-##-----------adding another subgroup feature-----------------  
+  ##-----------adding another subgroup feature-----------------  
   output$add <- renderUI({
     if(is.null(input$file0) || input$pop == 1)     
       return(NULL)
@@ -535,7 +533,7 @@ server <- function(input, output) {
     else{
       return(NULL)
     }
-
+    
   })
   
   valdemo <- reactive({
@@ -549,7 +547,7 @@ server <- function(input, output) {
       return(NULL)
     if(length(input$pop) != 0 && length(input$add) != 0){
       if(input$add == T){
-         checkboxGroupInput("demoval",label = NULL, choices = setNames(valdemo(),valdemo()))
+        checkboxGroupInput("demoval",label = NULL, choices = setNames(valdemo(),valdemo()))
       }
       else
         return(NULL)
@@ -565,7 +563,7 @@ server <- function(input, output) {
     val = as.vector(input$demoval)
     map(val,~textInput(paste("n1_",.),label = paste0("Label of ",.),.))
   })
-##---------------first filtering variable----------
+  ##---------------first filtering variable----------
   
   output$checkfl <- renderUI({
     if(is.null(input$file0))     
@@ -651,8 +649,8 @@ server <- function(input, output) {
       return(NULL)
     }
   })
-##-----------calculate the population for each group-----
-    
+  ##-----------calculate the population for each group-----
+  
   pop <- reactive({
     
     if(input$pop == 1){
@@ -694,7 +692,7 @@ server <- function(input, output) {
   })
   
   output$pop <- renderTable(pop())
-##--------------relationship----------------------
+  ##--------------relationship----------------------
   
   output$relt <- renderUI({
     if(input$checkr == FALSE || is.null(input$file1))
@@ -710,7 +708,7 @@ server <- function(input, output) {
         col1 = colnames(data)
         lab1 = label
       }
-
+      
       selectInput("rel", h5("Please select the relationship you would like to analyze"),
                   choices = setNames(col1,lab1),selected = "AEREL")
       
@@ -732,7 +730,7 @@ server <- function(input, output) {
   })
   
   
-##---------severity---------------------------------------  
+  ##---------severity---------------------------------------  
   
   output$sele <- renderUI({
     if(input$checks == FALSE || is.null(input$file1))
@@ -793,7 +791,7 @@ server <- function(input, output) {
     }
   })
   
-##------------------serious event----------------
+  ##------------------serious event----------------
   
   output$set <- renderUI({
     if(input$checksr == FALSE || is.null(input$file1))
@@ -802,7 +800,7 @@ server <- function(input, output) {
       data = adae()
       label = data %>% map(attr_getter("label"))
       idx1 = grep(pattern = "Serious|serious|SERIOUS|SAE",label)
-
+      
       if(length(idx1) != 0){
         col1 = colnames(data)[idx1]
         lab1 = label[idx1]
@@ -810,13 +808,13 @@ server <- function(input, output) {
         col1 = colnames(data)
         lab1 = label
       }
-
+      
       selectInput("serious", h5("Please select the condition of serious adverse event"),
                   choices = setNames(col1,lab1))
     }
     
   })
-##----------------------irAE----------------------------------
+  ##----------------------irAE----------------------------------
   output$irAE <- renderUI({
     if(is.null(input$file1))
       return(NULL)
@@ -839,7 +837,7 @@ server <- function(input, output) {
     
   })
   
-##----------------------infusion----------------------------------
+  ##----------------------infusion----------------------------------
   output$infusion <- renderUI({
     if(is.null(input$file1))
       return(NULL)
@@ -878,7 +876,7 @@ server <- function(input, output) {
         col1 = colnames(data)
         lab1 = label
       }
-
+      
       selectInput("pvar", h5("Select the variable of phase"),
                   choices = setNames(col1,lab1))
       
@@ -929,7 +927,7 @@ server <- function(input, output) {
   
   
   
-##---------------specific percentage of occurrence-------------------------  
+  ##---------------specific percentage of occurrence-------------------------  
   # output$pctcol <- renderUI({
   #   if(input$checkpct == F)
   #     return(NULL)
@@ -943,7 +941,7 @@ server <- function(input, output) {
       numericInput("pct", label = "Please enter the minimum percentage you are interested in",value = 5)
     }
   })
-##--------------------------data preview----------
+  ##--------------------------data preview----------
   datapre <- reactive({
     data1 <- input$file1
     adae <- read_sas(data1$datapath)
@@ -975,29 +973,29 @@ server <- function(input, output) {
   })
   
   
-##----------------------creat the dataset-----------------------------------------------------  
+  ##----------------------creat the dataset-----------------------------------------------------  
   
   observeEvent(input$action,{  
     
-  info <- reactive({
-    if(input$pop == 2){
-      adae <- adae()
-      adsl <- adsl()
-      adae <- adae %>%
-        left_join(adsl,by = "USUBJID")
-      adae
-    }
-    else{
-      adae()
-    }
-  })
-  
-
-  
-
+    info <- reactive({
+      if(input$pop == 2){
+        adae <- adae()
+        adsl <- adsl()
+        adae <- adae %>%
+          left_join(adsl,by = "USUBJID")
+        adae
+      }
+      else{
+        adae()
+      }
+    })
     
-  adae_gp <- reactive({
-
+    
+    
+    
+    
+    adae_gp <- reactive({
+      
       adae <- info()
       if(input$pop == 1){
         adae["TRTA"] = adae[input$var]
@@ -1015,570 +1013,570 @@ server <- function(input, output) {
         for (i in as.vector(input$slval)) {
           adae_gp[adae_gp$TRTA == i,]$TRTA = input[[paste("n_",i)]]
         }
-
+        
       }
       adae_gp
-    # }
-  })
-  
-  
-  adae_demo <- reactive({
-    if(input$pop == 2 && input$add == T){
-      adae = adae_gp()
-      if(input$demo %in% colnames(adae)){
-        adae["demo"] = adae[input$demo]
-        adae_demo = subset(adae,demo %in% as.vector(input$demoval))
-      }
-      else{
-        adae["demo"] = adae[paste(input$demo,".x",sep = "")]
-        adae_demo = subset(adae,demo %in% as.vector(input$demoval))
-      }
-      for (i in as.vector(input$demoval)) {
-        adae_demo[adae_demo$demo == i,]$demo = input[[paste("n1_",i)]]
-      }
-      adae_demo$TRTA = paste(adae_demo$TRTA,adae_demo$demo,sep = "+")
-      print(adae_demo$TRTA)
-      adae_demo
-    }
-    else
-      return(adae_gp())
+      # }
+    })
     
-  })
-  
-  adae_ph <- reactive({
-    if(is.null(input$pvar))
-      return(adae_demo())
-    else{
-      adae_demo <- adae_demo()
-      adae_demo["PHASE"] = adae_demo[input$pvar]
-      adae_ph = subset(adae_demo,PHASE == input$pval)
-      adae_ph
-    }
-  })
-  
-  
-  
-  adae_re <- reactive({
-    if(is.null(input$relg))
-      return(adae_ph())
-    else{
-      adae_ph <- adae_ph()
-      adae_ph["AEREL"] = adae_ph[input$rel]
-      relg = as.vector(input$relg)
-      adae_re = subset(adae_ph,AEREL %in% c(relg,""))
-      adae_re
-    }
-  })
-  
-  
-  adae_sr <- reactive({
-    if(input$checksr == F)
-      return(adae_re())
-    else{
-      adae_sr <- adae_re()
-      adae_sr["AESER"] = adae_sr[input$serious]
-      adae_sr = subset(adae_sr,AESER %in% "Y")
-      adae_sr
-    }
-  })
-  
-  adae_irae <- reactive({
-    if(input$checkirae == F)
-      return(adae_sr())
-    else{
-      adae_irea = adae_sr()
-      adae_irea["AEirAE"] = adae_irea[[input$immunere]]
-      adae_irea = subset(adae_irea,AEirAE %in% c("Y","Yes","是"))
-      adae_irea
-    }
-  })
-
-  adae_o <- reactive({
-    if(input$checko == F)
-      return(adae_irae())
-    else{
-      adae_o = adae_irae()
-      adae_o["adae_o"] = adae_o[[input$ovar]]
-      adae_o = subset(adae_o,adae_o %in% as.vector(input$oval))
-      adae_o
-    }
-  })
-  
-  adae_infu <- reactive({
-    if(input$checkinfu == F)
-      return(adae_o())
-    else{
-      adae_infu = adae_o()
-      adae_infu["inre"] = adae_infu[[input$infusionre]]
-      adae_infu = subset(adae_infu,inre %in% c("Y","Yes","y","yes","YES"))
-      adae_infu
-    }
-  })
-  
-  
-  
-  adae_sev_all <- reactive({
-    if(input$checks == F)
-      return(adae_infu())
-    else{
-      adae_sev_all = adae_infu()
-      adae_sev_1 = adae_infu()
-      adae_sev_1["AETOXGR"] = adae_sev_1[input$sele]
-      selg = as.vector(input$selg)
-      adae_sev_1 <- adae_sev_1 %>% 
-        group_by(USUBJID) %>%
-        arrange(desc(AETOXGR)) %>%
-        slice_head(n = 1)
-      if(is.null(input$selg) == F){
-        for(i in selg){
-          df = subset(adae_sev_1,AETOXGR %in% i)
-          df$grade = i
+    
+    adae_demo <- reactive({
+      if(input$pop == 2 && input$add == T){
+        adae = adae_gp()
+        if(input$demo %in% colnames(adae)){
+          adae["demo"] = adae[input$demo]
+          adae_demo = subset(adae,demo %in% as.vector(input$demoval))
+        }
+        else{
+          adae["demo"] = adae[paste(input$demo,".x",sep = "")]
+          adae_demo = subset(adae,demo %in% as.vector(input$demoval))
+        }
+        for (i in as.vector(input$demoval)) {
+          adae_demo[adae_demo$demo == i,]$demo = input[[paste("n1_",i)]]
+        }
+        adae_demo$TRTA = paste(adae_demo$TRTA,adae_demo$demo,sep = "+")
+        print(adae_demo$TRTA)
+        adae_demo
+      }
+      else
+        return(adae_gp())
+      
+    })
+    
+    adae_ph <- reactive({
+      if(is.null(input$pvar))
+        return(adae_demo())
+      else{
+        adae_demo <- adae_demo()
+        adae_demo["PHASE"] = adae_demo[input$pvar]
+        adae_ph = subset(adae_demo,PHASE == input$pval)
+        adae_ph
+      }
+    })
+    
+    
+    
+    adae_re <- reactive({
+      if(is.null(input$relg))
+        return(adae_ph())
+      else{
+        adae_ph <- adae_ph()
+        adae_ph["AEREL"] = adae_ph[input$rel]
+        relg = as.vector(input$relg)
+        adae_re = subset(adae_ph,AEREL %in% c(relg,""))
+        adae_re
+      }
+    })
+    
+    
+    adae_sr <- reactive({
+      if(input$checksr == F)
+        return(adae_re())
+      else{
+        adae_sr <- adae_re()
+        adae_sr["AESER"] = adae_sr[input$serious]
+        adae_sr = subset(adae_sr,AESER %in% "Y")
+        adae_sr
+      }
+    })
+    
+    adae_irae <- reactive({
+      if(input$checkirae == F)
+        return(adae_sr())
+      else{
+        adae_irea = adae_sr()
+        adae_irea["AEirAE"] = adae_irea[[input$immunere]]
+        adae_irea = subset(adae_irea,AEirAE %in% c("Y","Yes","是"))
+        adae_irea
+      }
+    })
+    
+    adae_o <- reactive({
+      if(input$checko == F)
+        return(adae_irae())
+      else{
+        adae_o = adae_irae()
+        adae_o["adae_o"] = adae_o[[input$ovar]]
+        adae_o = subset(adae_o,adae_o %in% as.vector(input$oval))
+        adae_o
+      }
+    })
+    
+    adae_infu <- reactive({
+      if(input$checkinfu == F)
+        return(adae_o())
+      else{
+        adae_infu = adae_o()
+        adae_infu["inre"] = adae_infu[[input$infusionre]]
+        adae_infu = subset(adae_infu,inre %in% c("Y","Yes","y","yes","YES"))
+        adae_infu
+      }
+    })
+    
+    
+    
+    adae_sev_all <- reactive({
+      if(input$checks == F)
+        return(adae_infu())
+      else{
+        adae_sev_all = adae_infu()
+        adae_sev_1 = adae_infu()
+        adae_sev_1["AETOXGR"] = adae_sev_1[input$sele]
+        selg = as.vector(input$selg)
+        adae_sev_1 <- adae_sev_1 %>% 
+          group_by(USUBJID) %>%
+          arrange(desc(AETOXGR)) %>%
+          slice_head(n = 1)
+        if(is.null(input$selg) == F){
+          for(i in selg){
+            df = subset(adae_sev_1,AETOXGR %in% i)
+            df$grade = i
+            adae_sev_all = bind_rows(adae_sev_all,df)
+          }
+        }
+        adae_sev_1$AETOXGR <- gsub("[^0-9.]","",adae_sev_1$AETOXGR)
+        if(input$checkgt3 == T){
+          df = subset(adae_sev_1,AETOXGR %in% c("3","4","5"))
+          df$grade = "Grade >= 3"
           adae_sev_all = bind_rows(adae_sev_all,df)
         }
+        if(input$checklw3 == T){
+          df = subset(adae_sev_1,AETOXGR %in% c("1","2"))
+          df$grade = "Grade < 3"
+          adae_sev_all = bind_rows(adae_sev_all,df)
+        }
+        adae_sev_all
+        
       }
-      adae_sev_1$AETOXGR <- gsub("[^0-9.]","",adae_sev_1$AETOXGR)
-      if(input$checkgt3 == T){
-        df = subset(adae_sev_1,AETOXGR %in% c("3","4","5"))
-        df$grade = "Grade >= 3"
-        adae_sev_all = bind_rows(adae_sev_all,df)
-      }
-      if(input$checklw3 == T){
-        df = subset(adae_sev_1,AETOXGR %in% c("1","2"))
-        df$grade = "Grade < 3"
-        adae_sev_all = bind_rows(adae_sev_all,df)
-      }
-      adae_sev_all
       
-    }
+    })
     
-  })
-  
-  adae_sev_soc <- reactive({
-    if(input$checks == F)
-      return(adae_infu())
-    else{
-      adae_sev_soc = adae_infu()
-      adae_sev_1 = adae_infu()
-      adae_sev_1["AETOXGR"] = adae_sev_1[input$sele]
-      selg = as.vector(input$selg)
-      adae_sev_1 <- adae_sev_1 %>% 
-        group_by(USUBJID,AESOC) %>%
-        arrange(desc(AETOXGR)) %>%
-        slice_head(n = 1)
-      if(is.null(input$selg) == F){
-        for(i in selg){
-          df = subset(adae_sev_1,AETOXGR %in% i)
-          df$grade = i
+    adae_sev_soc <- reactive({
+      if(input$checks == F)
+        return(adae_infu())
+      else{
+        adae_sev_soc = adae_infu()
+        adae_sev_1 = adae_infu()
+        adae_sev_1["AETOXGR"] = adae_sev_1[input$sele]
+        selg = as.vector(input$selg)
+        adae_sev_1 <- adae_sev_1 %>% 
+          group_by(USUBJID,AESOC) %>%
+          arrange(desc(AETOXGR)) %>%
+          slice_head(n = 1)
+        if(is.null(input$selg) == F){
+          for(i in selg){
+            df = subset(adae_sev_1,AETOXGR %in% i)
+            df$grade = i
+            adae_sev_soc = bind_rows(adae_sev_soc,df)
+          }
+        }
+        adae_sev_1$AETOXGR <- gsub("[^0-9.]","",adae_sev_1$AETOXGR)
+        if(input$checkgt3 == T){
+          df = subset(adae_sev_1,AETOXGR %in% c("3","4","5"))
+          df$grade = "Grade >= 3"
           adae_sev_soc = bind_rows(adae_sev_soc,df)
         }
+        if(input$checklw3 == T){
+          df = subset(adae_sev_1,AETOXGR %in% c("1","2"))
+          df$grade = "Grade < 3"
+          adae_sev_soc = bind_rows(adae_sev_soc,df)
+        }
+        adae_sev_soc
+        
       }
-      adae_sev_1$AETOXGR <- gsub("[^0-9.]","",adae_sev_1$AETOXGR)
-      if(input$checkgt3 == T){
-        df = subset(adae_sev_1,AETOXGR %in% c("3","4","5"))
-        df$grade = "Grade >= 3"
-        adae_sev_soc = bind_rows(adae_sev_soc,df)
-      }
-      if(input$checklw3 == T){
-        df = subset(adae_sev_1,AETOXGR %in% c("1","2"))
-        df$grade = "Grade < 3"
-        adae_sev_soc = bind_rows(adae_sev_soc,df)
-      }
-      adae_sev_soc
       
-    }
+    })
     
-  })
-  
-  
-  adae_sev_pt <- reactive({
-    if(input$checks == F)
-      return(adae_infu())
-    else{
-      adae_sev_pt = adae_infu()
-      adae_sev_1 = adae_infu()
-      adae_sev_1["AETOXGR"] = adae_sev_1[input$sele]
-      selg = as.vector(input$selg)
-      adae_sev_1 <- adae_sev_1 %>% 
-        group_by(USUBJID,AESOC,AEDECOD) %>%
-        arrange(desc(AETOXGR)) %>%
-        slice_head(n = 1)
-      if(is.null(input$selg) == F){
-        for(i in selg){
-          df = subset(adae_sev_1,AETOXGR %in% i)
-          df$grade = i
+    
+    adae_sev_pt <- reactive({
+      if(input$checks == F)
+        return(adae_infu())
+      else{
+        adae_sev_pt = adae_infu()
+        adae_sev_1 = adae_infu()
+        adae_sev_1["AETOXGR"] = adae_sev_1[input$sele]
+        selg = as.vector(input$selg)
+        adae_sev_1 <- adae_sev_1 %>% 
+          group_by(USUBJID,AESOC,AEDECOD) %>%
+          arrange(desc(AETOXGR)) %>%
+          slice_head(n = 1)
+        if(is.null(input$selg) == F){
+          for(i in selg){
+            df = subset(adae_sev_1,AETOXGR %in% i)
+            df$grade = i
+            adae_sev_pt = bind_rows(adae_sev_pt,df)
+          }
+        }
+        adae_sev_1$AETOXGR <- gsub("[^0-9.]","",adae_sev_1$AETOXGR)
+        if(input$checkgt3 == T){
+          df = subset(adae_sev_1,AETOXGR %in% c("3","4","5"))
+          df$grade = "Grade >= 3"
           adae_sev_pt = bind_rows(adae_sev_pt,df)
         }
-      }
-      adae_sev_1$AETOXGR <- gsub("[^0-9.]","",adae_sev_1$AETOXGR)
-      if(input$checkgt3 == T){
-        df = subset(adae_sev_1,AETOXGR %in% c("3","4","5"))
-        df$grade = "Grade >= 3"
-        adae_sev_pt = bind_rows(adae_sev_pt,df)
-      }
-      if(input$checklw3 == T){
-        df = subset(adae_sev_1,AETOXGR %in% c("1","2"))
-        df$grade = "Grade < 3"
-        adae_sev_pt = bind_rows(adae_sev_pt,df)
-      }
-      adae_sev_pt
-      
-    }
-    
-  })
-  
-
-  
-  
-  t_ae_1 <- reactive({
-    
-    adae_all = adae_sev_all()
-    adae_soc = adae_sev_soc()
-    print(adae_soc[adae_soc$AESOC == "Not Coded",])
-    adae_pt = adae_sev_pt()
-    pop = pop()
-
-    t01 <- adae_all %>%
-      group_by(TRTA,grade) %>%
-      summarise(n = n_distinct(USUBJID)) %>%
-      left_join(pop, by = "TRTA") %>%
-      mutate(AESOC="All", AEDECOD=AESOC, order = 0,order_all = 0,
-             pct = fmt_num(n / tot * 100, digits = 1),
-             pct = paste0(n," (", gsub("\\s+","",pct), ")")
-             
-      )
-
-    # by SOC 
-    
-    t1 <- adae_soc %>%
-      group_by(TRTA,grade,AESOC) %>%
-      summarise(n = n_distinct(USUBJID)) %>%
-      left_join(pop, by = "TRTA") %>%
-      mutate(AEDECOD = AESOC, order =  0,order_all = 1,
-             pct = n / tot * 100)
- 
-    
-    
-    # by PT
-    
-    #nsoc=t1 %>%
-    #  select(TRTA,TRTAN,grade,AESOC, n)  %>%
-    #  rename(nsoc=n) 
-    
-    
-    
-    t2 <- adae_pt %>%
-      group_by(TRTA,grade,AESOC,AEDECOD) %>%
-      summarise(n = n_distinct(USUBJID)) %>%
-      left_join(pop, by = "TRTA") %>%
-      mutate(order = 1,order_all = 1,
-             pct = n / tot * 100)
-    if(input$bysoc == T){
-      t2$AEDECOD <- paste("    ",t2$AEDECOD)
-    }
-    
-
-    
-    t1 <- t1 %>% 
-      mutate(pct = fmt_num(pct, digits = 1),
-             pct = paste0(n," (", gsub("\\s+","",pct), ")"))
-    
-    t2 <- t2 %>% 
-      mutate(pct = fmt_num(pct, digits = 1),
-             pct = paste0(n," (", gsub("\\s+","",pct), ")"))
-    
+        if(input$checklw3 == T){
+          df = subset(adae_sev_1,AETOXGR %in% c("1","2"))
+          df$grade = "Grade < 3"
+          adae_sev_pt = bind_rows(adae_sev_pt,df)
+        }
+        adae_sev_pt
         
-
-    
-    if(input$bysoc == T){
-      if(input$bypt == T){
-        t_ae_1 <- bind_rows(t01,t1, t2) 
-      }else{
-        t_ae_1 <- bind_rows(t01,t1)
       }
-    }else{
-      if(input$bypt == T){
-        t_ae_1 <- bind_rows(t01,t2)
-      }else{
-        t_ae_1 <- t01
-      }
-    }
+      
+    })
     
-    t_ae_1
     
-  })  
-  
-  
-  
-  
-  t_ae_2 <- reactive({
-    t_ae_2 <- t_ae_1() %>%
-      mutate(TRTA_grade=paste(TRTA,grade,sep="_")) %>%
-      pivot_wider(
-        id_cols = c(order_all,AESOC, order, AEDECOD),
-        names_from = TRTA_grade,
-        names_prefix = "pct_",
-        values_from = pct,
-        values_fill = fmt_num(0, digits = 0)
-      ) %>%
-      arrange(AESOC, order) %>%
-      select(AESOC, AEDECOD, order, starts_with("pct"))
     
-    sname = colnames(t_ae_2)
-    sname = sname[4:length(sname)]
-    sname1 <- gsub("_","  ",sname)
-    sname1 <- gsub("pct","",sname1)
     
-    updateSelectInput(session  = getDefaultReactiveDomain(),"col",choices = setNames(sname,sname1))
-   
-    t_ae_2  
-  })
-  
-  tae <- reactive({
-    t_ae <- t_ae_2()
-    
-    t_ae["sort_v"] = t_ae[input$col]
-    t_ae["sort_v"] = as.numeric(gsub("\\(.*","",t_ae$sort_v))
-    if(input$checkasc == T){
-      t_ae <- t_ae %>%
-        arrange(AESOC,order,sort_v) %>%
-        select(AESOC, AEDECOD, starts_with("pct"))
-    }
-    else{
+    t_ae_1 <- reactive({
+      
+      adae_all = adae_sev_all()
+      adae_soc = adae_sev_soc()
+      print(adae_soc[adae_soc$AESOC == "Not Coded",])
+      adae_pt = adae_sev_pt()
+      pop = pop()
+      
+      t01 <- adae_all %>%
+        group_by(TRTA,grade) %>%
+        summarise(n = n_distinct(USUBJID)) %>%
+        left_join(pop, by = "TRTA") %>%
+        mutate(AESOC="All", AEDECOD=AESOC, order = 0,order_all = 0,
+               pct = fmt_num(n / tot * 100, digits = 1),
+               pct = paste0(n," (", gsub("\\s+","",pct), ")")
+               
+        )
+      
+      # by SOC 
+      
+      t1 <- adae_soc %>%
+        group_by(TRTA,grade,AESOC) %>%
+        summarise(n = n_distinct(USUBJID)) %>%
+        left_join(pop, by = "TRTA") %>%
+        mutate(AEDECOD = AESOC, order =  0,order_all = 1,
+               pct = n / tot * 100)
+      
+      
+      
+      # by PT
+      
+      #nsoc=t1 %>%
+      #  select(TRTA,TRTAN,grade,AESOC, n)  %>%
+      #  rename(nsoc=n) 
+      
+      
+      
+      t2 <- adae_pt %>%
+        group_by(TRTA,grade,AESOC,AEDECOD) %>%
+        summarise(n = n_distinct(USUBJID)) %>%
+        left_join(pop, by = "TRTA") %>%
+        mutate(order = 1,order_all = 1,
+               pct = n / tot * 100)
       if(input$bysoc == T){
+        t2$AEDECOD <- paste("    ",t2$AEDECOD)
+      }
+      
+      
+      
+      t1 <- t1 %>% 
+        mutate(pct = fmt_num(pct, digits = 1),
+               pct = paste0(n," (", gsub("\\s+","",pct), ")"))
+      
+      t2 <- t2 %>% 
+        mutate(pct = fmt_num(pct, digits = 1),
+               pct = paste0(n," (", gsub("\\s+","",pct), ")"))
+      
+      
+      
+      
+      if(input$bysoc == T){
+        if(input$bypt == T){
+          t_ae_1 <- bind_rows(t01,t1, t2) 
+        }else{
+          t_ae_1 <- bind_rows(t01,t1)
+        }
+      }else{
+        if(input$bypt == T){
+          t_ae_1 <- bind_rows(t01,t2)
+        }else{
+          t_ae_1 <- t01
+        }
+      }
+      
+      t_ae_1
+      
+    })  
+    
+    
+    
+    
+    t_ae_2 <- reactive({
+      t_ae_2 <- t_ae_1() %>%
+        mutate(TRTA_grade=paste(TRTA,grade,sep="_")) %>%
+        pivot_wider(
+          id_cols = c(order_all,AESOC, order, AEDECOD),
+          names_from = TRTA_grade,
+          names_prefix = "pct_",
+          values_from = pct,
+          values_fill = fmt_num(0, digits = 0)
+        ) %>%
+        arrange(AESOC, order) %>%
+        select(AESOC, AEDECOD, order, starts_with("pct"))
+      
+      sname = colnames(t_ae_2)
+      sname = sname[4:length(sname)]
+      sname1 <- gsub("_","  ",sname)
+      sname1 <- gsub("pct","",sname1)
+      
+      updateSelectInput(session  = getDefaultReactiveDomain(),"col",choices = setNames(sname,sname1))
+      
+      t_ae_2  
+    })
+    
+    tae <- reactive({
+      t_ae <- t_ae_2()
+      
+      t_ae["sort_v"] = t_ae[input$col]
+      t_ae["sort_v"] = as.numeric(gsub("\\(.*","",t_ae$sort_v))
+      if(input$checkasc == T){
+        t_ae <- t_ae %>%
+          arrange(AESOC,order,sort_v) %>%
+          select(AESOC, AEDECOD, starts_with("pct"))
+      }
+      else{
+        if(input$bysoc == T){
           t_ae <- t_ae %>%
             arrange(AESOC,order,desc(sort_v),AEDECOD) %>%
             select(AESOC, AEDECOD, starts_with("pct"))
-        
-      }else{
-        if(input$bypt == T){
-          t_ae <- t_ae %>%
-            arrange(order,desc(sort_v),AEDECOD) %>%
-            select(AESOC, AEDECOD, starts_with("pct"))
-        }
+          
+        }else{
+          if(input$bypt == T){
+            t_ae <- t_ae %>%
+              arrange(order,desc(sort_v),AEDECOD) %>%
+              select(AESOC, AEDECOD, starts_with("pct"))
+          }
         }
       }
-
-    
-    
-    if(input$checkpct == T){
-      t_ae <- t_ae[rowSums(sapply(t_ae[,3:ncol(t_ae)],function(x) as.numeric(gsub(".*\\((.*)\\).*","\\1",x))) > input$pct)>0,]
-      t_ae <- t_ae %>%
-        select(AESOC,AEDECOD,starts_with("pct"))
-    }
-    else{
+      
+      
+      
+      if(input$checkpct == T){
+        t_ae <- t_ae[rowSums(sapply(t_ae[,3:ncol(t_ae)],function(x) as.numeric(gsub(".*\\((.*)\\).*","\\1",x))) > input$pct)>0,]
+        t_ae <- t_ae %>%
+          select(AESOC,AEDECOD,starts_with("pct"))
+      }
+      else{
+        t_ae
+      }
+      
+      t_ae <- as.data.frame(t_ae)
+      colnames(t_ae)[1] <- "SOC"
+      colnames(t_ae)[2] <- "PT"
+      
+      if(!is.null(input$checkallg) && input$checkallg == F){
+        t_ae = t_ae[,!grepl("All Grade",colnames(t_ae))]
+        if(input$bysoc == T){
+          row_n <- which(rowSums(t_ae[,3:ncol(t_ae)] == "   0") != ncol(t_ae)-2)
+          t_ae = t_ae[row_n,]
+        }else{
+          row_n <- which(rowSums(t_ae[,3:ncol(t_ae)] == "0") != ncol(t_ae)-2)
+          t_ae = t_ae[row_n,]
+          
+        }
+      }
+      
       t_ae
-    }
+    })
     
-    t_ae <- as.data.frame(t_ae)
-    colnames(t_ae)[1] <- "SOC"
-    colnames(t_ae)[2] <- "PT"
-
-    if(!is.null(input$checkallg) && input$checkallg == F){
-      t_ae = t_ae[,!grepl("All Grade",colnames(t_ae))]
-      if(input$bysoc == T){
-        row_n <- which(rowSums(t_ae[,3:ncol(t_ae)] == "   0") != ncol(t_ae)-2)
-        t_ae = t_ae[row_n,]
-      }else{
-        row_n <- which(rowSums(t_ae[,3:ncol(t_ae)] == "0") != ncol(t_ae)-2)
-        t_ae = t_ae[row_n,]
-
+    
+    
+    output$rt <- downloadHandler(
+      filename = "AEsummary.xlsx",
+      content = function(file){
+        t = test1()
+        if(input$bysoc == T){
+          final_table = t
+        }else{
+          final_table = t[,2:ncol(t)]
+        }
+        
+        
+        write.xlsx(final_table,file,firstRow = T,colWidths = "auto")
       }
-    }
-
-    t_ae
-  })
-  
- 
-  
-  output$rt <- downloadHandler(
-    filename = "AEsummary.xlsx",
-    content = function(file){
-      t = test1()
-      if(input$bysoc == T){
-        final_table = t
-      }else{
-        final_table = t[,2:ncol(t)]
-      }
-      
-      
-      write.xlsx(final_table,file,firstRow = T,colWidths = "auto")
-    }
-  )
-  
-
-  
-  output$level <- renderUI({
-    if(input$colo == F)     
-      return(NULL)
-    data <- test()
-    val = colnames(data)[3:ncol(data)]
-    # map(val,~numericInput(paste("rank_",.),label = paste0("The position to place ",.),value = NULL))
-    # map(val,~actionButton(paste("rank_",.),label = .,icon("arrow-up")))
-    rank_list(
-      text = "Drag the items in any desired order",
-      labels = val,
-      input_id = "rank_list")
-  })
-  
-  test1 <- reactive({
-    data <- test()
-    if(input$colo == F){
-      data
-    }else{
-      if(!is.null(input$rank_list)){
-        val = as.vector(input$rank_list)
-        val <- paste(" ",val,sep = "")
-        data <- data[,c("SOC","PT",val)]
-      }else{
+    )
+    
+    
+    
+    output$level <- renderUI({
+      if(input$colo == F)     
+        return(NULL)
+      data <- test()
+      val = colnames(data)[3:ncol(data)]
+      # map(val,~numericInput(paste("rank_",.),label = paste0("The position to place ",.),value = NULL))
+      # map(val,~actionButton(paste("rank_",.),label = .,icon("arrow-up")))
+      rank_list(
+        text = "Drag the items in any desired order",
+        labels = val,
+        input_id = "rank_list")
+    })
+    
+    test1 <- reactive({
+      data <- test()
+      if(input$colo == F){
         data
+      }else{
+        if(!is.null(input$rank_list)){
+          val = as.vector(input$rank_list)
+          val <- paste(" ",val,sep = "")
+          data <- data[,c("SOC","PT",val)]
+        }else{
+          data
+        }
+        
       }
+    })
+    
+    
+    test <- reactive({
+      t_ae <- tae()
+      pop <- pop()
+      colnames(t_ae) <- gsub("_"," ",colnames(t_ae))
+      colnames(t_ae) <- gsub("pct","",colnames(t_ae))
+      # n = 1
+      # if(length(input$checkgt3) != 0 && input$checkgt3 == T){
+      #   n = n+1
+      # }
+      # if(length(input$checklw3) != 0 && input$checklw3 == T){
+      #   n = n+1
+      # }
+      # if(length(input$checkallg) != 0 && input$checkallg == F){
+      #   n = n-1
+      # }
+      # if(length(input$selg) >0){
+      #   print(length(input$selg))
+      #   n = n+length(input$selg)
+      # }
+      # print(rep(paste("N = ",pop[["tot"]]),n))
+      #!is.null(input$checkallg) && input$checkallg == F
       
-    }
-  })
-
-  
-  test <- reactive({
-    t_ae <- tae()
-    pop <- pop()
-    colnames(t_ae) <- gsub("_"," ",colnames(t_ae))
-    colnames(t_ae) <- gsub("pct","",colnames(t_ae))
-    # n = 1
-    # if(length(input$checkgt3) != 0 && input$checkgt3 == T){
-    #   n = n+1
-    # }
-    # if(length(input$checklw3) != 0 && input$checklw3 == T){
-    #   n = n+1
-    # }
-    # if(length(input$checkallg) != 0 && input$checkallg == F){
-    #   n = n-1
-    # }
-    # if(length(input$selg) >0){
-    #   print(length(input$selg))
-    #   n = n+length(input$selg)
-    # }
-    # print(rep(paste("N = ",pop[["tot"]]),n))
-    #!is.null(input$checkallg) && input$checkallg == F
-
-    # for (i in 3:n) {
-    #   colnames(t_ae)[i] <- paste(colnames(t_ae)[i+2]," N=",pop()[i,2])
-    # } 
-
-    t_ae
-    # if(input$checks == T){
-    #   
-    #   if(is.null(input$selg) == F && input$checkgt3 == T && input$checklw3 == T){
-    #     a=c(" "," ")
-    #     b=c(" "," ")
-    #     for(i in 1:nrow(pop)){
-    #       k=as.character(pop[i,1])
-    #       n = length(unique(t_ae$grade[t_ae$TRTA == pop[i,1]]))
-    #       g = unique(t_ae$grade[t_ae$TRTA == pop[i,1]])
-    #       a = append(a,c(paste(pop[i,1],"  N=",pop[i,2]),replicate(n-1," ")))
-    #       b = append(b,g)
-    #     }
-    #     data.frame(rbind(a,b))
-    #   }
-    #   
-    #   else if(is.null(input$selg) == F && input$checkgt3 == T  && input$checklw3 == F){
-    #     a=c(" "," ")
-    #     b=c(" "," ")
-    #     for(i in 1:nrow(pop)){
-    #       n = length(unique(t_ae$grade[t_ae$TRTA == pop[i,1]]))
-    #       g = unique(t_ae$grade[t_ae$TRTA == pop[i,1]])
-    #       a = append(a,c(paste(pop[i,1],"  N=",pop[i,2]),replicate(n-1," ")))
-    #       b = append(b,g)
-    #     }
-    #     data.frame(rbind(a,b))
-    #   }
-    #   
-    #   else if(is.null(input$selg) == F && input$checkgt3 == F  && input$checklw3 == T){
-    #     a=c(" "," ")
-    #     b=c(" "," ")
-    # 
-    #     for(i in 1:nrow(pop)){
-    #       n = length(unique(t_ae$grade[t_ae$TRTA == pop[i,1]]))
-    #       g = unique(t_ae$grade[t_ae$TRTA == pop[i,1]])
-    #       a = append(a,c(paste(pop[i,1],"  N=",pop[i,2]),replicate(n," ")))
-    #       b = append(b,g)
-    #     }
-    #     data.frame(rbind(a,b))
-    #   }
-    #   
-    #   else if(is.null(input$selg) == F && input$checkgt3 == F  && input$checklw3 == F){
-    #     a=c(" "," ")
-    #     b=c(" "," ")
-    #     for(i in 1:nrow(pop())){
-    #       n = length(unique(t_ae$grade[t_ae$TRTA == pop[i,1]]))
-    #       g = unique(t_ae$grade[t_ae$TRTA == pop[i,1]])
-    #       a = append(a,c(paste(pop[i,1],"  N=",pop[i,2]),replicate(n," ")))
-    #       b = append(b,c(g,"All Grades"))
-    #     }
-    #     data.frame(rbind(a,b))
-    #   } 
-    #   
-    #   else if(is.null(input$selg) && input$checkgt3 == F && input$checklw3 == T){
-    #     a=c(" "," ")
-    #     b=c(" "," ")
-    #     for(i in 1:nrow(pop())){
-    #       a = append(a,c(paste(pop()[i,1],"  N=",pop()[i,2])," "))
-    #       b = append(b,c("Grade < 3","All Grades"))
-    #     }
-    #     data.frame(rbind(a,b))
-    #   }
-    #   
-    #   else if(is.null(input$selg) && input$checkgt3 == T && input$checklw3 == F){
-    #     a=c(" "," ")
-    #     b=c(" "," ")
-    #     for(i in 1:nrow(pop())){
-    #       a = append(a,c(paste(pop()[i,1],"  N=",pop()[i,2])," "))
-    #       b = append(b,c("Grade >= 3","All Grades"))
-    #     }
-    #     data.frame(rbind(a,b))
-    #   }
-    #   
-    #   
-    #   else if(is.null(input$selg) && input$checkgt3 == T && input$checklw3 == T){
-    #     a=c(" "," ")
-    #     b=c(" "," ")
-    #     for(i in 1:nrow(pop())){
-    #       a = append(a,c(paste(pop()[i,1],"  N=",pop()[i,2])," "," "))
-    #       b = append(b,c("Grade < 3","Grade >= 3","All Grades"))
-    #     }
-    #     data.frame(rbind(a,b))
-    #   }
-    # }
-    # 
-    # else{
-    #   a=c(" "," ")
-    #   for(i in 1:nrow(pop())){
-    #     a = append(a,c(paste(pop()[i,1],"  N=",pop()[i,2])))
-    #   }
-    #   a
-    # }
-  })   
-  
-  
-  output$test <- DT::renderDataTable({
-    if(is.null(input$file1))     
-      return(NULL)
-    # t = test()
-    # if(is.data.frame(t)){
-    #   colnames(t) = colnames(tae())
-    # }
-    # final_table = rbind(t,tae())#
-    final_table = test1()
-    rownames(final_table)<-NULL
-    formattable(final_table,align = "l",header = F,
-                list(SOC = F,area(col = 1:ncol(tae()))~formatter("span",style = ~ style(font.weight = ifelse(final_table[,2] != SOC,"normal","bold"))))) %>%
-      as.datatable(options=list(scrollX = T,ordering = F),rownames = F)
-  }) 
-  
-  
-  
-   
+      # for (i in 3:n) {
+      #   colnames(t_ae)[i] <- paste(colnames(t_ae)[i+2]," N=",pop()[i,2])
+      # } 
+      
+      t_ae
+      # if(input$checks == T){
+      #   
+      #   if(is.null(input$selg) == F && input$checkgt3 == T && input$checklw3 == T){
+      #     a=c(" "," ")
+      #     b=c(" "," ")
+      #     for(i in 1:nrow(pop)){
+      #       k=as.character(pop[i,1])
+      #       n = length(unique(t_ae$grade[t_ae$TRTA == pop[i,1]]))
+      #       g = unique(t_ae$grade[t_ae$TRTA == pop[i,1]])
+      #       a = append(a,c(paste(pop[i,1],"  N=",pop[i,2]),replicate(n-1," ")))
+      #       b = append(b,g)
+      #     }
+      #     data.frame(rbind(a,b))
+      #   }
+      #   
+      #   else if(is.null(input$selg) == F && input$checkgt3 == T  && input$checklw3 == F){
+      #     a=c(" "," ")
+      #     b=c(" "," ")
+      #     for(i in 1:nrow(pop)){
+      #       n = length(unique(t_ae$grade[t_ae$TRTA == pop[i,1]]))
+      #       g = unique(t_ae$grade[t_ae$TRTA == pop[i,1]])
+      #       a = append(a,c(paste(pop[i,1],"  N=",pop[i,2]),replicate(n-1," ")))
+      #       b = append(b,g)
+      #     }
+      #     data.frame(rbind(a,b))
+      #   }
+      #   
+      #   else if(is.null(input$selg) == F && input$checkgt3 == F  && input$checklw3 == T){
+      #     a=c(" "," ")
+      #     b=c(" "," ")
+      # 
+      #     for(i in 1:nrow(pop)){
+      #       n = length(unique(t_ae$grade[t_ae$TRTA == pop[i,1]]))
+      #       g = unique(t_ae$grade[t_ae$TRTA == pop[i,1]])
+      #       a = append(a,c(paste(pop[i,1],"  N=",pop[i,2]),replicate(n," ")))
+      #       b = append(b,g)
+      #     }
+      #     data.frame(rbind(a,b))
+      #   }
+      #   
+      #   else if(is.null(input$selg) == F && input$checkgt3 == F  && input$checklw3 == F){
+      #     a=c(" "," ")
+      #     b=c(" "," ")
+      #     for(i in 1:nrow(pop())){
+      #       n = length(unique(t_ae$grade[t_ae$TRTA == pop[i,1]]))
+      #       g = unique(t_ae$grade[t_ae$TRTA == pop[i,1]])
+      #       a = append(a,c(paste(pop[i,1],"  N=",pop[i,2]),replicate(n," ")))
+      #       b = append(b,c(g,"All Grades"))
+      #     }
+      #     data.frame(rbind(a,b))
+      #   } 
+      #   
+      #   else if(is.null(input$selg) && input$checkgt3 == F && input$checklw3 == T){
+      #     a=c(" "," ")
+      #     b=c(" "," ")
+      #     for(i in 1:nrow(pop())){
+      #       a = append(a,c(paste(pop()[i,1],"  N=",pop()[i,2])," "))
+      #       b = append(b,c("Grade < 3","All Grades"))
+      #     }
+      #     data.frame(rbind(a,b))
+      #   }
+      #   
+      #   else if(is.null(input$selg) && input$checkgt3 == T && input$checklw3 == F){
+      #     a=c(" "," ")
+      #     b=c(" "," ")
+      #     for(i in 1:nrow(pop())){
+      #       a = append(a,c(paste(pop()[i,1],"  N=",pop()[i,2])," "))
+      #       b = append(b,c("Grade >= 3","All Grades"))
+      #     }
+      #     data.frame(rbind(a,b))
+      #   }
+      #   
+      #   
+      #   else if(is.null(input$selg) && input$checkgt3 == T && input$checklw3 == T){
+      #     a=c(" "," ")
+      #     b=c(" "," ")
+      #     for(i in 1:nrow(pop())){
+      #       a = append(a,c(paste(pop()[i,1],"  N=",pop()[i,2])," "," "))
+      #       b = append(b,c("Grade < 3","Grade >= 3","All Grades"))
+      #     }
+      #     data.frame(rbind(a,b))
+      #   }
+      # }
+      # 
+      # else{
+      #   a=c(" "," ")
+      #   for(i in 1:nrow(pop())){
+      #     a = append(a,c(paste(pop()[i,1],"  N=",pop()[i,2])))
+      #   }
+      #   a
+      # }
+    })   
+    
+    
+    output$test <- DT::renderDataTable({
+      if(is.null(input$file1))     
+        return(NULL)
+      # t = test()
+      # if(is.data.frame(t)){
+      #   colnames(t) = colnames(tae())
+      # }
+      # final_table = rbind(t,tae())#
+      final_table = test1()
+      rownames(final_table)<-NULL
+      formattable(final_table,align = "l",header = F,
+                  list(SOC = F,area(col = 1:ncol(tae()))~formatter("span",style = ~ style(font.weight = ifelse(final_table[,2] != SOC,"normal","bold"))))) %>%
+        as.datatable(options=list(scrollX = T,ordering = F),rownames = F)
+    }) 
+    
+    
+    
+    
   })  
   
-
+  
   
   tbl_ae_spec <-reactive({
     tbl_ae_spec <- t_ae() %>%
@@ -1613,21 +1611,21 @@ server <- function(input, output) {
       rtf_encode()
   })
   
-
   
-
-#-------------------------------------------------------------------------------------------------
-    
-#--------------------------------#MAPPING#--------------------------------------------------------
-
+  
+  
+  #-------------------------------------------------------------------------------------------------
+  
+  #--------------------------------#MAPPING#--------------------------------------------------------
+  
   
   merge_data <- reactive({
     adae <- adae()
-
+    
     adae
   })
   
-
+  
   
   output$miss <- renderText({
     if(is.null(input$filet) || is.null(input$soct) || is.null(input$ptt))
